@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elingo Express - Agence de Transport et Logistique!</title>
     
-    <!-- Importation de la police CSS Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Icônes FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Lien vers le fichier CSS séparé -->
     <link rel="stylesheet" href="styleelingovrai.css">
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="logo">
             <h1>Elingo Servire!</h1>
@@ -36,29 +32,12 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="accueil" class="hero">
-        <h2>Votre Logistique, Notre Priorité</h2>
-        <p>Votre fret sécurisé par Avion, Bateau et Bus. Expédition de marchandises et colis en toute fluidité.</p>
-        
-        <div class="transport-grid">
-            <div class="transport-card">
-                <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80&w=500" alt="Bateau Cargo">
-                <div class="card-info">
-                    <i class="fa-solid fa-ship"></i> Bateau & Colis
-                </div>
-            </div>
-            
-            <div class="transport-card">
-                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=500" alt="Bus de transport">
-                <div class="card-info">
-                    <i class="fa-solid fa-bus"></i> Bus & Colis
-                </div>
-            </div>
+    <section id="accueil" class="hero-banniere">
+        <div class="banniere-container">
+            <img src="banniere-elingo.jpg" alt="Elingo Express - Votre Partenaire Logistique de Confiance" class="img-responsive-banniere">
         </div>
     </section>
 
-    <!-- A PROPOS -->
     <section id="apropos" class="section">
         <h2 class="section-title">À Propos de Nous</h2>
         <div class="about-box">
@@ -67,14 +46,12 @@
         </div>
     </section>
 
-    <!-- Section Catégories de Colis - Elingo Servire -->
     <section id="categories" class="categories-section">
         <h2>Nos Catégories de Colis Admissibles</h2>
         <p class="section-subtitle">Découvrez les types de marchandises que nous transportons en toute sécurité depuis la Chine.</p>
 
         <div class="categories-grid">
             
-            <!-- 1. Objets Électroniques -->
             <div class="category-card">
                 <div class="category-image">
                     <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=500" alt="Objets Électroniques et Consoles">
@@ -86,18 +63,16 @@
                 </div>
             </div>
 
-            <!-- 2. Articles en Plastique -->
             <div class="category-card">
                 <div class="category-image">
                     <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=500" alt="Articles et chaises en Plastique">
                 </div>
                 <div class="category-content">
                     <h3>Articles en Plastique</h3>
-                    <p>Tous vos articles et mobiliers en plastique, y compris les chaises en plastique et tanks d'eau (citernes).</p>
+                    <p>Tous vos articles et mobiliers en plastique, y compris les chaises en plastique and tanks d'eau (citernes).</p>
                 </div>
             </div>
 
-            <!-- 3. Vêtements & Textile -->
             <div class="category-card">
                 <div class="category-image">
                     <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=500" alt="Vêtements et Textiles">
@@ -108,7 +83,6 @@
                 </div>
             </div>
 
-            <!-- 4. Matériaux en Fer & Construction -->
             <div class="category-card">
                 <div class="category-image">
                     <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=500" alt="Matériaux en Fer et Matériels de Construction">
@@ -119,7 +93,6 @@
                 </div>
             </div>
 
-            <!-- 5. Cartons de Marchandises -->
             <div class="category-card">
                 <div class="category-image">
                     <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&q=80&w=500" alt="Cartons de Marchandises Diverses">
@@ -132,7 +105,6 @@
 
         </div>
 
-        <!-- Menu déroulant classique mis à jour dynamiquement -->
         <div class="category-selection">
             <p>Vous pouvez aussi choisir ici :</p>
             <select id="main-dropdown" onchange="selectCategory(this.value)">
@@ -146,7 +118,6 @@
         </div>
     </section>
 
-    <!-- SECTION CONTACT -->
     <section id="contact" class="section">
         <h2 class="section-title">Discuter avec nos Agences</h2>
         
@@ -156,11 +127,9 @@
 
         <div class="contact-layout">
             
-            <!-- PARTIE GAUCHE : TOUTES LES AGENCES CLASSIQUES -->
             <div class="left-agencies">
                 <div class="agencies-grid">
                     
-                    <!-- BUNIA -->
                     <div class="agency-card">
                         <h3><i class="fa-solid fa-location-dot"></i> Agence Bunia</h3>
                         <p><strong>Adresse:</strong> Poste Ituri La Paix (En face de l'église AIC)</p>
@@ -171,7 +140,6 @@
                         </div>
                     </div>
 
-                    <!-- GOMA -->
                     <div class="agency-card">
                         <h3><i class="fa-solid fa-location-dot"></i> Agence Goma</h3>
                         <p><strong>Adresse:</strong> Arrêt de bus Burere, Entrée Office des routes</p>
@@ -182,7 +150,6 @@
                         </div>
                     </div>
 
-                    <!-- KINSHASA -->
                     <div class="agency-card">
                         <h3><i class="fa-solid fa-location-dot"></i> Agence Kinshasa</h3>
                         <p><strong>Adresse:</strong> Bureau de Kinshasa (Sur demande)</p>
@@ -193,7 +160,6 @@
                         </div>
                     </div>
 
-                    <!-- KISANGANI -->
                     <div class="agency-card">
                         <h3><i class="fa-solid fa-location-dot"></i> Agence Kisangani</h3>
                         <p><strong>Adresse:</strong> Bureau de Kisangani (Sur demande)</p>
@@ -204,7 +170,6 @@
                         </div>
                     </div>
 
-                    <!-- KAMPALA (Transport) -->
                     <div class="agency-card kampala">
                         <h3><i class="fa-solid fa-location-dot"></i> Agence Kampala</h3>
                         <p><strong>Adresse:</strong> Aruampark plazza A4-256</p>
@@ -218,7 +183,6 @@
                 </div>
             </div>
 
-            <!-- PARTIE DROITE : SERVICE ACHATS CHINE -->
             <div class="right-china-exclusive">
                 <div class="china-card">
                     <h3><i class="fa-solid fa-globe"></i> Service Achats Chine</h3>
@@ -239,7 +203,6 @@
         </div>
     </section>
 
-    <!-- INTERACTION -->
     <section class="section interaction-section">
         <div class="comments">
             <h3 style="color:var(--accent); margin-bottom: 10px;">Avis de nos clients</h3>
@@ -278,12 +241,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 Elingo Servire. Tous droits réservés.</p>
     </footer>
 
-    <!-- SCRIPT LOGIQUE DES ACTIONS -->
     <script>
         function selectCategory(categoryName) {
             if(!categoryName) return;
