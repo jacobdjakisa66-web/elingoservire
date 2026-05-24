@@ -61,50 +61,29 @@ nav a:hover { color: var(--accent); }
     cursor: pointer;
 }
 
-/* --- HERO SECTION --- */
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
-}
-.hero h2 { font-size: 40px; margin-bottom: 10px; color: var(--accent); font-weight: 700; }
-.hero p { font-size: 20px; color: var(--text-light); margin-bottom: 40px; }
-
-.transport-grid {
+/* --- HERO SECTION NOUVELLE MODIFICATION --- */
+.hero-banniere {
+    width: 100%;
+    background-color: var(--bg-dark);
+    padding: 20px 0;
     display: flex;
     justify-content: center;
-    gap: 25px;
-    max-width: 800px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    align-items: center;
 }
-.transport-card {
-    background: var(--bg-card);
+.banniere-container {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    width: 280px;
-    transition: var(--transition);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
-.transport-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent);
-    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
-}
-.transport-card img {
+.img-responsive-banniere {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: auto;
     display: block;
+    object-fit: cover;
 }
-.transport-card .card-info {
-    padding: 15px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 16px;
-}
-.transport-card i { color: var(--accent); margin-right: 8px; }
 
 /* --- SECTIONS COMMUNES --- */
 .section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
@@ -128,7 +107,7 @@ nav a:hover { color: var(--accent); }
 }
 .founder { font-weight: bold; color: var(--accent); font-size: 20px; margin-top: 15px; display: block; }
 
-/* --- SECTIONS DES CATÉGORIES (Intégrée au Thème Sombre) --- */
+/* --- SECTIONS DES CATÉGORIES --- */
 .categories-section {
     padding: 60px 20px;
     text-align: center;
@@ -233,7 +212,7 @@ nav a:hover { color: var(--accent); }
     flex: 1;
     min-width: 280px;
     position: sticky;
-    top: 90px; /* Reste visible au défilement */
+    top: 90px;
 }
 .agencies-grid {
     display: grid;
@@ -250,7 +229,6 @@ nav a:hover { color: var(--accent); }
 }
 .agency-card.kampala { border-top-color: var(--accent); } 
 
-/* Style spécial pour la Chine */
 .china-card {
     background: linear-gradient(135deg, #27272a 0%, #1e293b 100%);
     padding: 30px;
@@ -261,7 +239,6 @@ nav a:hover { color: var(--accent); }
 .china-card h3 { color: #ef4444; margin-bottom: 12px; font-size: 20px; text-transform: uppercase; }
 .china-card p { font-size: 14px; margin-bottom: 15px; color: var(--text-muted); }
 
-/* Message d'alerte */
 .selection-alert {
     background: rgba(245, 158, 11, 0.15);
     border: 1px solid var(--accent);
