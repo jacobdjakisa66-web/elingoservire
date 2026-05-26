@@ -32,16 +32,16 @@
         </div>
     </header>
     
-<section id="accueil" class="hero-banniere">
-    <div class="banniere-container">
-        <img src="elingo_servise.png" alt="Elingo Express - Votre Partenaire Logistique de Confiance">
-    </div>
-</section>
+    <section id="accueil" class="hero-banniere">
+        <div class="banniere-container">
+            <img src="elingo_servise.png" alt="Elingo Express - Votre Partenaire Logistique de Confiance">
+        </div>
+    </section>
 
     <section id="apropos" class="section">
         <h2 class="section-title">À Propos de Nous</h2>
         <div class="about-box">
-            <p>"Chez Elingo Servire, nous transformons la distance en proximité. Nous sommes une agence de transport et de logistique dédiée à l'excellence, offrant des solutions d'expédition fiables, rapides et sécurisées pour tous vos colis et marchandises ."</p>
+            <p>"Chez Elingo Servire, nous transformons la distance en proximité. Nous sommes une agence de transport et de logistique dédiée à l'excellence, offering des solutions d'expédition fiables, rapides et sécurisées pour tous vos colis et marchandises ."</p>
             <span class="founder">Fondateur : Monsieur Elie Musingo</span>
         </div>
     </section>
@@ -246,16 +246,17 @@
     </footer>
 
     <script>
+        // Fonction déclenchée lors de la sélection d'une marchandise dans la liste
         function selectCategory(categoryName) {
             if(!categoryName) return;
 
-            // 1. Mettre à jour l'alerte de statut informative
+            // 1. Change l'apparence et le texte de la boîte d'alerte pour confirmation
             document.getElementById('alert-statut').innerHTML = "✅ Catégorie choisie : <strong>" + categoryName + "</strong>. Choisissez maintenant l'agence ci-dessous pour envoyer votre demande.";
             document.getElementById('alert-statut').style.background = "rgba(37, 211, 102, 0.15)";
             document.getElementById('alert-statut').style.borderColor = "#25D366";
             document.getElementById('alert-statut').style.color = "#25D366";
 
-            // 2. Préremplir automatiquement les zones de texte de chaque agence
+            // 2. Écrit automatiquement le texte pré-rempli dans les textareas des agences
             var defaultText = "Bonjour Elingo Express, je souhaite expédier un colis de la catégorie : " + categoryName + ". Pouvez-vous me donner la procédure et les tarifs ?";
             var chinaText = "Bonjour, je souhaite effectuer des achats en Chine concernant des articles de type : " + categoryName + ". Comment faire ?";
             
@@ -266,23 +267,27 @@
             document.getElementById('msg-kampala').value = defaultText;
             document.getElementById('msg-chine').value = chinaText;
 
-            // 3. Scroller l'utilisateur vers la section des agences
+            // 3. Redirige l'écran de l'utilisateur automatiquement vers les formulaires (scroll fluide)
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
+        // Fonction pour ouvrir la discussion WhatsApp avec le message saisi
         function sendWA(idNumber, idMessage) {
             var phoneNumber = document.getElementById(idNumber).value;
             var message = document.getElementById(idMessage).value;
             
+            // Sécurité : évite l'envoi d'un message complètement vide
             if(message.trim() === "") {
                 alert("Veuillez d'abord choisir une catégorie d'article en haut ou écrire un message.");
                 return;
             }
             
+            // Génération de l'URL API WhatsApp standard et ouverture dans un nouvel onglet
             var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
             window.open(url, "_blank");
         }
 
+        // Ajoute un nouvel avis utilisateur en haut de la liste de manière instantanée
         function addUserComment() {
             var txt = document.getElementById('user-new-comment').value;
             if(txt.trim() === "") {
@@ -293,14 +298,17 @@
             var div = document.createElement('div');
             div.className = 'comment-item';
             div.innerHTML = '<span class="user">Client Anonyme</span><span class="stars">★★★★★</span><p class="text">' + txt + '</p>';
+            
+            // insertBefore insère le commentaire au tout début (en haut)
             container.insertBefore(div, container.firstChild);
-            document.getElementById('user-new-comment').value = "";
+            document.getElementById('user-new-comment').value = ""; // Vide le champ de texte
             alert("Merci pour votre avis !");
         }
 
+        // Simulation de l'augmentation du compteur de visiteurs toutes les 5 secondes
         let count = 1428;
         setInterval(() => {
-            if(Math.random() > 0.7) {
+            if(Math.random() > 0.7) { // 30% de chance d'ajouter un visiteur à chaque cycle
                 count++;
                 document.getElementById('visitor-count').innerText = count.toLocaleString('fr-FR');
             }
