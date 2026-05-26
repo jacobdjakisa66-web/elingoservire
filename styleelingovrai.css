@@ -1,15 +1,18 @@
-/* Thème sombre, moderne et professionnel */
+/* ==========================================================================
+   1. VARIABLES ET CONFIGURATION GENERALE
+   ========================================================================== */
 :root {
-    --bg-dark: #0f172a;      /* Bleu nuit profond */
-    --bg-card: #1e293b;      /* Bleu gris pour les sections */
-    --accent: #f59e0b;       /* Orange/Or pour l'action */
-    --text-light: #f8fafc;   /* Blanc cassé pour le texte */
-    --text-muted: #cbd5e1;
-    --transition: all 0.3s ease;
+    --bg-dark: #0f172a;      /* Couleur de fond principale (Bleu nuit profond) */
+    --bg-card: #1e293b;      /* Couleur des blocs/cartes (Bleu gris) */
+    --accent: #f59e0b;       /* Couleur d'action et mise en valeur (Orange/Or) */
+    --text-light: #f8fafc;   /* Couleur du texte principal (Blanc cassé) */
+    --text-muted: #cbd5e1;   /* Couleur du texte secondaire (Gris clair) */
+    --transition: all 0.3s ease; /* Animation fluide pour les surrections (hovers) */
 }
 
+/* Réinitialisation des marges et application de la police globale */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Permet de calculer les bordures dans la largeur de l'élément */
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -19,39 +22,48 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     line-height: 1.6;
-    scroll-behavior: smooth; /* Défilement fluide automatique */
+    scroll-behavior: smooth; /* Défilement fluide lors des clics sur les liens du menu */
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* ==========================================================================
+   2. ENTÊTE (HEADER) & BARRE DE NAVIGATION
+   ========================================================================== */
 header {
     background-color: var(--bg-card);
     padding: 15px 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espace le logo, le menu et la langue */
     align-items: center;
-    border-bottom: 2px solid var(--accent);
-    position: sticky;
+    border-bottom: 2px solid var(--accent); /* Ligne orange sous le menu */
+    position: sticky; /* Le menu reste bloqué en haut au défilement */
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* S'assure que le menu reste au-dessus des autres éléments */
 }
+
 .logo h1 {
     color: var(--accent);
     font-weight: 700;
     font-size: 24px;
 }
+
 nav ul {
-    list-style: none;
+    list-style: none; /* Aligne les liens horizontalement */
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Espace entre les liens */
 }
+
 nav a {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
 }
-nav a:hover { color: var(--accent); }
 
+nav a:hover { 
+    color: var(--accent); /* Le lien devient orange au survol de la souris */
+}
+
+/* Sélecteur de langue */
 .lang-switch select {
     background: var(--bg-dark);
     color: var(--text-light);
@@ -61,7 +73,9 @@ nav a:hover { color: var(--accent); }
     cursor: pointer;
 }
 
-/* --- HERO SECTION NOUVELLE MODIFICATION --- */
+/* ==========================================================================
+   3. SECTION ACCUEIL (BANNIÈRE DE GRANDE TAILLE)
+   ========================================================================== */
 .hero-banniere {
     width: 100%;
     background-color: var(--bg-dark);
@@ -70,23 +84,32 @@ nav a:hover { color: var(--accent); }
     justify-content: center;
     align-items: center;
 }
+
 .banniere-container {
     max-width: 800px;
     width: 95%;
     margin: 0 auto;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Coupe l'image si elle dépasse des arrondis */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Ombre portée sous la bannière */
 }
-.img-responsive-banniere {
-    width: 100%;
+
+.banniere-container img {
+    width: 100%; /* L'image s'adapte à 100% de la largeur du conteneur */
     height: auto;
     display: block;
     object-fit: cover;
 }
 
-/* --- SECTIONS COMMUNES --- */
-.section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+/* ==========================================================================
+   4. STRUCTURES DES SECTIONS ET CONTENU "À PROPOS"
+   ========================================================================== */
+.section { 
+    padding: 60px 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
 .section-title {
     text-align: center;
     font-size: 28px;
@@ -97,22 +120,32 @@ nav a:hover { color: var(--accent); }
     letter-spacing: 1px;
 }
 
-/* --- A PROPOS --- */
+/* Encadré de la section À propos */
 .about-box {
     background: var(--bg-card);
     padding: 30px;
     border-radius: 10px;
     text-align: center;
-    border-left: 5px solid var(--accent);
+    border-left: 5px solid var(--accent); /* Bordure orange épaisse sur la gauche */
 }
-.founder { font-weight: bold; color: var(--accent); font-size: 20px; margin-top: 15px; display: block; }
 
-/* --- SECTIONS DES CATÉGORIES --- */
+.founder { 
+    font-weight: bold; 
+    color: var(--accent); 
+    font-size: 20px; 
+    margin-top: 15px; 
+    display: block; 
+}
+
+/* ==========================================================================
+   5. SECTION GRILLE DES CATEGORIES DE MARCHANDISES
+   ========================================================================== */
 .categories-section {
     padding: 60px 20px;
     text-align: center;
     background-color: var(--bg-dark);
 }
+
 .categories-section h2 {
     font-size: 28px;
     color: var(--accent);
@@ -120,10 +153,13 @@ nav a:hover { color: var(--accent); }
     font-weight: 700;
     margin-bottom: 10px;
 }
+
 .section-subtitle {
     color: var(--text-muted);
     margin-bottom: 40px;
 }
+
+/* Alignement automatique des cartes : s'ajuste selon la taille de l'écran */
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -131,6 +167,8 @@ nav a:hover { color: var(--accent); }
     max-width: 1200px;
     margin: 0 auto 35px auto;
 }
+
+/* Style de chaque carte individuelle de marchandise */
 .category-card {
     background: var(--bg-card);
     border-radius: 12px;
@@ -139,29 +177,36 @@ nav a:hover { color: var(--accent); }
     border: 1px solid #334155;
     transition: var(--transition);
 }
+
 .category-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Légère animation de montée au survol */
     border-color: var(--accent);
 }
+
 .category-image img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: cover; /* Recadre l'image proprement sans la déformer */
 }
+
 .category-content {
     padding: 20px;
     text-align: left;
 }
+
 .category-content h3 {
     margin-top: 0;
     color: var(--accent);
     font-size: 1.3rem;
     margin-bottom: 8px;
 }
+
 .category-content p {
     font-size: 14px;
     color: var(--text-light);
 }
+
+/* Badge d'avertissement rouge (ex: Hors Téléviseurs) */
 .warning-tag {
     display: inline-block;
     margin-top: 10px;
@@ -174,15 +219,17 @@ nav a:hover { color: var(--accent); }
     border: 1px solid rgba(204, 0, 0, 0.4);
 }
 
+/* Menu déroulant de sélection rapide */
 .category-selection {
     background: var(--bg-card);
     padding: 30px;
     border-radius: 10px;
     text-align: center;
-    border: 1px dashed rgba(245, 158, 11, 0.4);
+    border: 1px dashed rgba(245, 158, 11, 0.4); /* Bordure en pointillés */
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .category-selection select {
     width: 100%;
     max-width: 500px;
@@ -197,48 +244,62 @@ nav a:hover { color: var(--accent); }
     font-weight: 600;
 }
 
-/* --- STRUCTURE POUR METTRE LA CHINE À CÔTÉ --- */
+/* ==========================================================================
+   6. ZONE DE CONTACT & AGENCES (DISPOSITION LATERALE ORDINATEUR)
+   ========================================================================== */
 .contact-layout {
     display: flex;
     gap: 30px;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permet aux blocs de descendre si l'écran rétrécit */
 }
+
 .left-agencies {
-    flex: 2;
+    flex: 2; /* Prend deux tiers de l'espace disponible sur grand écran */
     min-width: 300px;
 }
+
 .right-china-exclusive {
-    flex: 1;
+    flex: 1; /* Prend un tiers de l'espace sur grand écran */
     min-width: 280px;
-    position: sticky;
+    position: sticky; /* Reste visible sur le côté au défilement de la page */
     top: 90px;
 }
+
 .agencies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
+
+/* Style de la boîte d'une agence */
 .agency-card {
     background: var(--bg-card);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    border-top: 4px solid #334155;
+    border-top: 4px solid #334155; /* Petite ligne supérieure décorative grise */
     transition: var(--transition);
 }
-.agency-card.kampala { border-top-color: var(--accent); } 
 
+/* Distinction pour l'agence principale de Kampala */
+.agency-card.kampala { 
+    border-top-color: var(--accent); /* Ligne supérieure orange pour Kampala */
+} 
+
+/* Style spécial pour la carte exclusive Chine (Bordure Rouge) */
 .china-card {
     background: linear-gradient(135deg, #27272a 0%, #1e293b 100%);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(239, 68, 68, 0.15);
-    border: 2px solid #ef4444;
+    border: 2px solid #ef4444; /* Bordure rouge */
 }
+
 .china-card h3 { color: #ef4444; margin-bottom: 12px; font-size: 20px; text-transform: uppercase; }
 .china-card p { font-size: 14px; margin-bottom: 15px; color: var(--text-muted); }
 
+/* Message d'alerte interactif */
 .selection-alert {
     background: rgba(245, 158, 11, 0.15);
     border: 1px solid var(--accent);
@@ -251,6 +312,7 @@ nav a:hover { color: var(--accent); }
     font-size: 14px;
 }
 
+/* Formulaires internes de messages */
 .wa-form { display: flex; flex-direction: column; gap: 10px; }
 .wa-form textarea {
     background: var(--bg-dark);
@@ -261,6 +323,8 @@ nav a:hover { color: var(--accent); }
     resize: none;
     height: 80px;
 }
+
+/* Bouton vert WhatsApp officiel */
 .btn-wa {
     background: #25D366; 
     color: white;
@@ -277,12 +341,15 @@ nav a:hover { color: var(--accent); }
 }
 .btn-wa:hover { background: #1ebe57; transform: translateY(-2px); }
 
-/* --- INTERACTION & COMMENTAIRES --- */
+/* ==========================================================================
+   7. ZONE DES AVIS CLIENTS & COMPTEUR
+   ========================================================================== */
 .interaction-section {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
 }
+
 .comments, .stats {
     background: var(--bg-card);
     padding: 30px;
@@ -290,23 +357,28 @@ nav a:hover { color: var(--accent); }
     flex: 1;
     min-width: 300px;
 }
+
 .comments textarea {
     width: 100%; height: 80px; margin-bottom: 15px;
     background: var(--bg-dark); color: white; border: 1px solid var(--accent); padding: 10px;
     border-radius: 5px;
 }
+
 .btn-submit { background: var(--accent); color: var(--bg-dark); border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; transition: var(--transition); }
 .btn-submit:hover { opacity: 0.9; }
 
+/* Zone de défilement interne des avis */
 .comments-list {
     max-height: 400px;
-    overflow-y: auto;
+    overflow-y: auto; /* Active la barre de défilement si beaucoup d'avis */
     margin-top: 20px;
     padding-right: 5px;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
+
+/* Style de la barre de défilement (Scrollbar) */
 .comments-list::-webkit-scrollbar { width: 6px; }
 .comments-list::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
@@ -320,6 +392,79 @@ nav a:hover { color: var(--accent); }
 .comment-item .text { font-size: 13px; color: var(--text-light); margin-top: 2px; }
 .comment-item .stars { color: #eab308; font-size: 11px; margin-left: 8px; }
 
+/* Compteur de visites */
 .counter { font-size: 40px; color: var(--accent); font-weight: bold; display: block; margin-top: 10px; }
 
 footer { text-align: center; padding: 25px; background: var(--bg-card); margin-top: 40px; border-top: 1px solid #334155; }
+
+/* ==========================================================================
+   8. AJUSTEMENTS RESPONSIVE (APPLIQUES UNIQUEMENT SUR TELEPHONES MOBILE)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* Le menu du haut passe en mode vertical pour ne pas déborder */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    /* Liens du menu disposés proprement au centre */
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 15px;
+    }
+    
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    /* Réduction des marges internes pour gagner de la place */
+    .section, .categories-section {
+        padding: 30px 15px;
+    }
+    
+    .section-title, .categories-section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    /* La bannière prend toute la largeur disponible du téléphone */
+    .banniere-container {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    /* Alignement forcé sur une seule colonne pour la zone de contact */
+    .contact-layout {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .left-agencies, .right-china-exclusive {
+        width: 100%;
+        flex: none;
+    }
+    
+    /* Désactivation du mode 'sticky' de la Chine sur mobile pour éviter les bugs */
+    .right-china-exclusive {
+        position: static;
+        margin-top: 10px;
+    }
+    
+    /* Une seule agence affichée par ligne sur l'écran du smartphone */
+    .agencies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Alignement vertical de la section avis et statistiques */
+    .interaction-section {
+        flex-direction: column;
+    }
+    
+    .comments, .stats {
+        width: 100%;
+    }
+}
